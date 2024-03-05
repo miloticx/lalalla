@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Widget</title>
+    <style>
+        .widget {
+            text-align: center;
+            background-image: url('https://i.pinimg.com/originals/4d/11/a4/4d11a4ffaedf868588f96c34d74141f9.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 20px;
+            color: white; /* Set text color to white for better visibility */
+        }
+    </style>
+</head>
+<body>
+    <div class="widget">
+        <p id="datetime">Loading...</p> <!-- Display a loading message -->
+    </div>
+
+    <script>
+        // Get the current date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+            document.getElementById('datetime').textContent = now.toLocaleString('en-US', options);
+        }
+
+        // Initial call to updateDateTime to display date and time immediately
+        updateDateTime();
+    </script>
+</body>
+</html>
